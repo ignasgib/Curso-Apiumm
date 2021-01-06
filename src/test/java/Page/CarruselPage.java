@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.sql.Driver;
 
 import static Report.Report.addStep;
+import static Utils.Utils.esperarObjeto;
 
 public class CarruselPage {
 
@@ -30,19 +31,21 @@ public class CarruselPage {
     @AndroidFindBy(id="com.rodrigo.registro:id/next")
     private MobileElement btnFlecha;
 
-    public void ValidarVistaDesplegada(){
-       if(iconovista.isDisplayed()){
-           addStep("validar lista desplegada",true, Status.PASSED,false);
-        } else{
-           addStep("validar lista desplegada",true, Status.FAILED,true);
-       }
-    }
-    public void ValidarVistaBtn(){
-        if(btnFlecha.isDisplayed()){
-            addStep("validar boton desplegar",true, Status.PASSED,false);
-        } else{
-            addStep("validar boton desplegadar",true, Status.FAILED,true);
+    public void ValidarVistaDesplegada() {
+        if (esperarObjeto(iconovista, 5)) {
+
+            if (iconovista.isDisplayed()) {
+                addStep("validar lista desplegada", true, Status.PASSED, false);
+            } else {
+                addStep("validar lista desplegada", true, Status.FAILED, true);
+            }
+        }
+        public void ValidarVistaBtn () {
+            if (btnFlecha.isDisplayed()) {
+                addStep("validar boton desplegar", true, Status.PASSED, false);
+            } else {
+                addStep("validar boton desplegadar", true, Status.FAILED, true);
+            }
         }
     }
-
 }
