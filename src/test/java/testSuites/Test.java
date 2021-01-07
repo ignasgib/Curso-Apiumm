@@ -4,10 +4,12 @@ import Report.Report;
 import TestClases.TestCarrusel;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import static conexion.DriverContext.setUp;
 
-public class Test {
+public class Test extends Report{
     @BeforeMethod
     public void iniciarSession(){
+
 
     }
 
@@ -21,8 +23,10 @@ public class Test {
     public void testCarrusel(){
         TestCarrusel test = new TestCarrusel();
         test.validaciones();
+        finalassert();
 
     }
+
 
 
 }
