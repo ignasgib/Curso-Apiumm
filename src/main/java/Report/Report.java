@@ -5,7 +5,7 @@ import io.qameta.allure.model.Status;
 import io.qameta.allure.model.StepResult;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.springframework.util.Assert;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import java.io.File;
 import java.io.FileInputStream;
